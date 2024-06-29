@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/NavBar.css' %}">
+        <script src="{% static  'js/search.js'%}" defer></script>
+        <script src="{% static  'js/Login-profile.js'%}"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>{{book.title}}</title>
+        <link rel="stylesheet" href="{% static 'css/Bookpage.css' %}"/>
+        <script src="{% static  'js/ReadMore.js'%}"></script>
+    </head>
+    <body>
+{% if user_type == 'user' %}
+      {% include 'user_navbar.html' %}
+{% elif user_type == 'admin' %}
+      {% include 'admin_navbar.html' %}
+{% endif %}
+
+       
+        <img class="bookcover" src="{{ book.image_url.url }}" alt="" > 
+        <div class="inset">
+            <h1>{{book.title}}</h1>   
+            <div class="Authorimg">
+               <img class="author" src="{{ book.authorImage_url.url }}" alt="">
+               <p><b>Author: </b>{{book.author}}</p>
+            </div>
+            <p><b>Category: </b>{{book.category}}</p>
+            <p><b>ISBN (10):</b> {{book.isbn10}}</p>
+            <p><b>ISBN (13):</b>  {{book.isbn13}}</p>
+        
+        </div>
+        <div class="container">
+       
+            <h2><b>Overview:</b></h2>
+ 
+            <p >
+                {{book.overview1}}    
+            </p>
+        
+            
+         <div id="restparagraph">
+            <p>
+                {{book.overview2}}
+            </p>
+    
+             
+         </div> 
+         
+         <button class="btnreadmore" onclick="toggleVisibility()">Read More</button>
+     
+         </div>
+
+         <footer class="footer">
+            <div class="social-container">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+              <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+              <a href="https://www.twitter.com" target="_blank" class="fa fa-twitter"></a>
+              <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+              <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
+            </div>
+            <p style="color:#f2f2f2">&copy; Copyright  BOOKTOPIA 2024. All Rights Reserved.</p> <!--#f2f2f2  #333333-->
+          </footer>
+       
+    </body>
+</html>

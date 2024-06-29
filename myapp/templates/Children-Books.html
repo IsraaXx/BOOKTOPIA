@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Children Books</title>
+        <link rel="stylesheet" href="{% static 'css/Children Books.css'%}">
+        <link rel="stylesheet" href="{% static 'css/NavBar.css' %}">
+        
+        <script src="{% static  'js/search.js'%}" defer></script>
+        <script src="{% static  'js/Login-profile.js'%}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+    </head>
+    <body>
+{% if user_type == 'user' %}
+      {% include 'user_navbar.html' %}
+{% elif user_type == 'admin' %}
+      {% include 'admin_navbar.html' %}
+{% endif %}    
+ 
+
+        <div class="intro">
+          <h2 id = "c">Children's Books category :</h2>
+          <p id="para1"> Welcome to our wonderful world of children's books! Here you will find a wide variety of stories and adventures that will dazzle the little ones and foster their love for reading. 
+            Our goal is to offer free, high-quality children's book downloads, so that there is always a good story in your children's lives. Our selection of children's books covers many themes, ensuring there's always something new and interesting to explore.
+            In addition, we take pride in providing educational and entertaining materials that will help children develop reading and comprehension skills while having fun diving into magical and fantastic worlds.</p> 
+          <p id="para2">
+            Children's books are more than just stories – they're invitations to a world where anything is possible. With each turn of the page, your imagination takes flight. You become the curious explorer, the brave hero, the loyal friend. You laugh with silly characters, cry with heartbroken ones, and learn valuable lessons along the way.
+            These books are bursting with color and wonder.  Illustrators paint vibrant pictures that bring the stories to life. Animals wear clothes, houses talk, and trees whisper secrets. Every detail on the page sparks curiosity, encouraging you to examine every corner of this fantastical world.
+          </p>
+      </div>
+    <div class="container">
+        {% for book in children_books %}
+        <div class="card" id="{{ book.id }}">
+            <a href="{% url 'book_detail' book.id %}" target="_self">
+                <img class="imgbook" src="{{ book.image_url.url }}" alt="{{ book.title }}">
+            </a>
+            <div class="details">
+                <h1>{{ book.title }}</h1>
+                <p>By {{ book.author }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+          <footer class="footer">
+    <div class="social-container">
+        <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+      <a href="https://www.twitter.com" target="_blank" class="fa fa-twitter"></a>
+      <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+      <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
+    </div>
+    <p style="color:#f2f2f2">&copy; Copyright  BOOKTOPIA 2024. All Rights Reserved.</p>
+  </footer>
+
+    </body>
+</html> 

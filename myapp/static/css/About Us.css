@@ -1,0 +1,90 @@
+header{
+    text-align: center;
+    font-family: "Lucida Handwriting";
+        padding: 0px;
+        
+}
+
+body{
+background-color: white;
+
+}
+.img1{
+   width: 500px;
+   height: 500px;
+    border-radius: 1000px;
+    float: left;
+}
+div>p{
+    font-size: larger;
+}
+#restparagraph{
+    display: none;
+}
+.btnreadmore {
+    font-size: 2rem;
+    font-weight: 550;
+    font-family:Arial, Helvetica, sans-serif;
+    border: none;
+    outline: 0;
+    padding: 15px;
+    margin: 7.5rem;
+    margin-left: 20px;
+    font-size: 1rem;
+    color: white;
+    background-color:rgb(160, 15, 183) ;
+    text-align: center;
+    cursor: pointer;
+    width: 15rem;
+    border-radius: 4px;
+}
+ 
+button:hover {
+    background-color:rgb(100, 4, 114) ;
+}
+/* ----------------codefooter and social media icons---------------------------------------- */
+.fa {
+  padding: 25px; 
+  font-size: 20px; 
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%; /* Circular icons */
+}
+
+.fa:hover {
+  background-color: rgba(0, 0, 0, 0.2); /* Slight darkening on hover */
+}
+
+.fa-facebook {
+  background-color: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background-color: #e1306c; 
+  color: white;
+}
+
+.fa-linkedin {
+  background-color: #0077b5; 
+  color: white;
+}
+.footer {
+  background-color:#2c3e50;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  width: auto;
+  height: 130px; 
+  padding-top: 10px;
+  padding-bottom: 0; 
+  margin-bottom: 0;
+}

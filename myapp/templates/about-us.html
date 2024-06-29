@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="{% static 'css/NavBar.css' %}">
+      <script src="{% static  'js/search.js'%}" defer></script>
+      <script src="{% static  'js/Login-profile.js'%}"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>About-Us</title>
+    <link rel="stylesheet" href="{%static 'css/About Us.css'%}"/>
+    <script src="{%static 'js/ReadMore.js'%}"></script>
+  </head>
+  <body>
+
+{% if user_type == 'user' %}
+    {% include 'user_navbar.html' %}
+{% elif user_type == 'admin' %}
+    {% include 'admin_navbar.html' %}
+{% endif %}
+   <header> 
+        <h1>ABOUT_US</h1>
+        <h3>BOOKTOPIA your virtual haven for literary exploration and knowledge.</h3>
+    </header>
+       
+    <img class="img1"src="{%static 'image/about us.PNG'%}" alt="About-Us">
+      <div>
+        <p> At <b>BOOKTOPIA</b>, we are passionate about providing readers with a vast collection of books, fostering a love for reading, and promoting lifelong learning.
+        Our online platform allows you to access these materials conveniently from any device, anytime, and anywhere. We understand the importance of staying connected in today's digital age, and we strive to provide a seamless and user-friendly experience on our website.
+    </p>
+    <p>Our online library is designed to provide an enjoyable reading experience, offering a diverse range of genres and categories to cater to every reader's taste.
+     Our library helps the reader to view and search for books by author name or title book to borrow.
+     We allow the authors to add their books in our library and edit in its details and delete book if he wants.
+    we provide categories history books , person development books , Children books and more books.... </p>
+        </div>
+                <div id="restparagraph">
+                <p>With BOOKTOPIA, you have access to a wealth of literary treasures at your fingertips.
+                    To ensure that you have access to the latest and most relevant information, we regularly update our library with new releases, popular titles, and educational resources. Our team is committed to curating a diverse collection that reflects the interests and preferences of our readers.
+               <br>Furthermore, we value your feedback and suggestions. If there's a particular book or resource you'd like to see in our library, please let us know, and we'll do our best to make it available for you.
+                </p>
+                <p>Thank you for being a part of our online library community. We are dedicated to providing you with an enriching reading experience and empowering you with knowledge through our extensive collection. 
+                tart exploring our website today and embark on a journey of discovery!</p>
+                </div>
+                <button class="btnreadmore" onclick="toggleVisibility()">Read More</button>
+                
+          <!-- /*******************************Footer_Code********************************/ -->
+    <footer class="footer">
+        <div class="social-container">
+          
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+          <a href="https://www.twitter.com" target="_blank" class="fa fa-twitter"></a>
+          <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+          <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
+        </div>
+        <p style="color:#f2f2f2">&copy; Copyright  BOOKTOPIA 2024. All Rights Reserved.</p>
+      </footer>
+    </body>
+</html>

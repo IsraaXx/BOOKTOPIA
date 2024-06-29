@@ -1,0 +1,112 @@
+/* Style for the table */
+h1{
+    text-align: center;
+    font-family: "Lucida Handwriting";
+      color: rgb(8, 2, 72);
+  }
+/* Style for the table */
+.table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: auto;
+    margin-bottom: 45px;
+}
+
+/* Style for table headers */
+.table th {
+    background-color: #f2f2f2;
+    padding: 5px;
+    text-align: left;
+    border-bottom: 2px solid #c2bfbf;
+    font-size: larger;
+}
+
+/* Style for table rows */
+.table td {
+    padding: 10px;
+    border-bottom: 3px solid #ddd;
+     font-size: large;
+}
+
+/* Style for table links */
+.table tr {
+    text-decoration: none;
+    color: #334bb7;
+    padding: 6px 12px; /* Padding for button-like appearance */
+    border: 2px solid #99a0a5; /* Border for button-like appearance */
+    border-radius: 4px; /* Rounded corners for button-like appearance */
+    background-color: whitesmoke ;/* Background color for button-like appearance */
+    /* color: #fff; Text color for button-like appearance */
+  
+}
+
+/* Hover effect for table links */
+.table tr:hover {
+    background-color: darkgray; /* Darker background color on hover */
+     /* Darker border color on hover */
+}
+
+/* Style for delete button */
+.delete-btn {
+
+   font-size: 1rem;
+    font-weight: 550;
+    font-family:Arial, Helvetica, sans-serif;
+    color:white; 
+    background-color:rgb(160, 11, 160);
+    border: none;
+    cursor:pointer;
+    padding: 10px 50px;
+    align-items: normal;
+}
+
+/* Hover effect for delete button */
+.delete-btn:hover {
+    background-color: #71097f;
+}
+
+.fa {
+    padding: 25px; 
+    font-size: 20px; 
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%; /* Circular icons */
+  }
+  
+  .fa:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Slight darkening on hover */
+  }
+  
+  .fa-facebook {
+    background-color: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background-color: #55ACEE;
+    color: white;
+  }
+  
+  .fa-instagram {
+    background-color: #e1306c; 
+    color: white;
+  }
+  
+  .fa-linkedin {
+    background-color: #0077b5; 
+    color: white;
+  }
+  .footer {
+    background-color:#2c3e50;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    width: auto;
+    height: 130px; 
+    padding-top: 10px;
+    padding-bottom: 0; 
+    margin-bottom: 0;
+  }

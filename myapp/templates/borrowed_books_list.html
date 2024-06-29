@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/NavBar.css'%}">
+    <script src="{% static 'js/Login-profile.js'%}"></script>
+    <script src="{% static 'js/search.js'%}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/BookList.css'%}">
+    <script src="{% static  'js/ReadMore.js'%}"></script>
+    <title>Book List</title>
+</head>
+<body>
+{% include 'user_navbar.html' %}
+           
+
+
+{% block content %}
+{% for borrowed_book in borrowed_books %}
+<!-- .title -->
+<div class="bookl" id="book-{{borrowed_book.id}}">
+    <img class="bookimg" src="{{ borrowed_book.book.image_url.url }}" alt="Book Image">
+     <div class="bookdetail">
+       <h2>{{ borrowed_book.book.title }}</h2>
+       <p><b>Author: </b>{{borrowed_book.book.author }}</p>
+       <p><b>ISBN (10): </b>{{ borrowed_book.book.isbn10 }}</p>
+       <p><b>ISBN (13): </b>{{ borrowed_book.book.isbn13 }}</p>
+       <p><b>Category: </b> {{ borrowed_book.book.category }} </p>
+        <div class="pdf-container">
+             <!-- <img src="{% static 'image/pdf-icon.jpg' %}" alt="PDF Icon"> -->
+             
+             {% if borrowed_book.book.pdf %}
+             <p><i class="fa-solid fa-file-pdf"></i> <b>:</b> <a href="{{borrowed_book.book.pdf.url}}" target="_blank">{{borrowed_book.book.pdf.name|slice:"5:"}}</a></p>
+             {% else %} 
+             <p><i class="fa-solid fa-file-pdf"></i> <b>:</b> No PDF </p>
+             {% endif %}
+             
+            </div>
+
+       <button type="submit" data-book-id="{{ borrowed_book.id }}" class="btn" name="book_id" value="{{ borrowed_book.id }}">Return</button>
+      </div>
+   </div>
+{% endfor %}
+<script>
+   document.querySelectorAll(".btn").forEach(function(button) {
+      button.addEventListener('click', function() {
+          var bookId = this.getAttribute("data-book-id");
+          // var csrfToken = document.getElementById("csrf-token").value;
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", 'http://127.0.0.1:8000/delete/' + bookId + '/', true);
+          // xhr.setRequestHeader("X-CSRFToken", csrfToken);
+          xhr.onreadystatechange = function() {
+              if (xhr.readyState == 4) {
+                  if (xhr.status == 200) {
+                      var response = JSON.parse(xhr.responseText);
+                      console.log(response.status);
+                      if (response.status === 'success') {
+                          console.log(response.message);
+                          // Update button text if needed
+                          //button.textContent = "Unavailable";
+                          var div = document.getElementById('book-' + bookId);
+                          div.style.display = 'none';
+                      } else {
+                          console.log(response.message);
+                      }
+                  }
+              }
+          };
+          xhr.send();
+      });
+  });
+  </script>
+{% endblock %}
+
+
+<footer class="footer">
+   <div class="social-container">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+     <a href="https://www.twitter.com" target="_blank" class="fa fa-twitter"></a>
+     <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+     <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
+   </div>
+   <p style="color:#f2f2f2">&copy; Copyright  BOOKTOPIA 2024. All Rights Reserved.</p> 
+ </footer>
+
+</body>
+</html>

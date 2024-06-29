@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset = "UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Registeration Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    {%load static%}
+    <script src="{% static 'js/register.js' %}"></script>
+</head>
+
+<body>
+<div class="wrapper">
+  <form id="signform" method="post"  >
+       {% csrf_token %}
+    <h1>Registeration</h1>
+    <div class="input-box">
+        <div class="input-field">
+            <input type="text" placeholder="Username" name="username"  id="username" autocomplete="off">
+            <div class="error"></div>
+            <svg xmlns="http://w...content-available-to-author-only...3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+              </svg>
+
+
+        </div>
+        <div class="input-field">
+            <input type="text" placeholder="Email" name="email" id="email" autocomplete="off">
+            <div class="error"></div>
+            <svg xmlns="http://w...content-available-to-author-only...3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon"viewBox="0 0 16 16">
+                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+              </svg>
+
+
+        </div>
+    </div>
+
+    <div class="input-box">
+        <div class="input-field">
+            <input type="password" placeholder="Password" name="password" id="password" autocomplete="off">
+            <div class="error"></div>
+            <svg xmlns="http://w...content-available-to-author-only...3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+              </svg>
+
+        </div>
+        <div class="input-field">
+            <input type="password" placeholder="Confirm Password" name="password2" id="password2" autocomplete="off">
+            <div class="error"></div>
+            <svg xmlns="http://w...content-available-to-author-only...3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+              </svg>
+        </div>
+    </div>
+    <div class="role">
+    <label for>Select Role:</label>
+    <input type="radio" id="userRoleUser" name="type" value="user" checked>
+    <label for="userRoleUser">User</label>
+    <input type="radio" id="userRoleAdmin" name="type" value="admin">
+    <label for="userRoleAdmin">Admin</label>
+    </div>
+    <label> <input type="checkbox"> I hereby declare that the above information provided is true and correct </label>
+    <button type="submit" class="btn">Register</button>
+    </form>
+    </div>
+
+    </body>
+
+    </html>
+    
+    
+  

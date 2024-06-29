@@ -1,0 +1,45 @@
+{% load static %}
+<html>
+    <head>
+     <title>My Profile</title>
+     <link rel="stylesheet" href="{% static 'css/NavBar.css' %}">
+     <link rel="stylesheet" href="{% static 'css/Admin.css' %}">
+    <script src="{% static 'js/search.js' %}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+  <body>
+    {% include 'admin_navbar.html' %}
+    <div id="admin">
+      <div class="left">
+        <img src="/static/image/profile.jpg" class="img" width="100" height="130">
+        <h4 class="name">{{name}}</h4>
+        <a class="out" href="{% url 'login' %}">Log out</a>
+      </div>
+      <div class="right">
+        <div class="info">
+          <h3>Information</h3>
+          <div class="info_data">
+              <div class="data">
+                <h4>User Name</h4>
+                <p>{{name}} </p>
+                </div>
+                <div class="data">
+                  <h4>Email</h4>
+                  <p>{{email}}</p>
+                  </div>
+            </div>  
+           </div>
+           </div>
+           </div>
+           <footer class="footer">
+            <div class="social-container">
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+              <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+            <a href="https://www.twitter.com" target="_blank" class="fa fa-twitter"></a>
+            <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+            <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
+            </div>
+            <p style="color:#f2f2f2">&copy; Copyright  BOOKTOPIA 2024. All Rights Reserved.</p>
+          </footer>
+  </body>
+ </html>

@@ -1,0 +1,48 @@
+{% load static %}
+<html>
+<body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/NavBar.css' %}">
+
+          <div id="FirstDiv">
+              <img src= "{% static 'image/Logo.jpg' %}" id="image1">
+              <nav id="Home" class="rest"><a href="{% url 'home_page' %}" target="_blank" id="Start">Home</a></nav>
+              <nav id="" class="rest"><i class="fa-solid fa-book "></i><a href="{%url 'book_list'%}" target="_self" style="padding-left: 7px;">Book List</a></nav>
+              <nav id="" class="rest"><i class="fa-solid fa-book "></i><a href="{%url 'borrowedbooklist'%}" target="_self" style="padding-left: 7px;">Borrowed Books</a></nav>
+              <nav id="Categories">
+                  <div id="dropdown">
+                    <button id="dropbtn" class="rest">Categories <i class="fas fa-caret-down"></i></button>
+                    <div id ="dropdown-content">
+                      <a href="{%url 'scientific_books'%}" target="_blank">ScientificBooks</a>
+                      <a href="{%url 'personal_development_books'%}" target="_blank">PersonaldevelopmentBooks</a>
+                      <a href="{%url 'historic_books'%}" target="_blank">HistoricBooks</a>
+                      <a href="{%url 'children_books'%}" target="_blank">ChildrenBooks</a>
+                      <a href="{%url 'detective_books'%}" target="_blank">DetectiveBooks</a>
+                      <a href="{%url 'Programming_books'%}" target="_blank">programmingBooks</a>
+                    </div>
+                  </div>
+                  </nav>
+              <nav id="About" class="rest"><a href="{%url 'about_us'%}" target="_self">About Us</a></nav>
+              <nav id="Contact" class="rest"><a href="{%url 'contact_us'%}" target="_self">Contact Us</a></nav>
+              <nav >
+                   <div class="dropdown" >
+                    <button class="dropbtn">
+                      <i class="fa-solid fa-user"></i>
+                  </button>
+                <div class="dropdown-content">
+                  <a href="{%url 'Myprofile' %}" target="_self">My Profile</a>
+                  <a href="{%url 'login'%}" target="_self">Log out</a>
+                </div>
+                </div>
+                </nav>
+                <div class="search-box">
+                  <i class="fa fa-search searchIcon" style= "margin-left: 205px;"></i>
+                  <input type="text" placeholder="Search by Title, Author, or Genre" id="search-item" style="padding-left: 10px;">
+                
+                  <div class="result-box">
+                    
+                  </div>
+                </div> 
+          </div>  
+        </body>
+        </html>

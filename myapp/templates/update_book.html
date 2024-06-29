@@ -1,0 +1,40 @@
+{% load static %} 
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <link rel="stylesheet" href="{% static 'css/NavBar.css'%}"> 
+    <script src="{% static 'js/Login-profile.js'%}"></script> 
+    <script src="{% static 'js/search.js'%}" defer></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/addform.css' %}"> 
+    <title>Edit book</title> 
+</head> 
+<body> 
+
+
+  {% include 'admin_navbar.html' %}
+       
+  <div class="book-form"> 
+    <h1>UPDATE BOOK</h1> 
+    <br/> 
+   <form action="" method=POST enctype="multipart/form-data"> 
+    {% csrf_token %} 
+    {{ form.as_p }} 
+    <br/> 
+    <input type="submit" value="Submit"class="submit-btn"></input> 
+  </form> 
+    </div> 
+     
+  <footer class="footer"> 
+    <div class="social-container"> 
+       
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+      <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a> 
+      <a href="https://www.twitter.com" target="_blank" class="fa fa-twitter"></a> 
+      <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a> 
+      <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a> 
+    </div> 
+    <p style="color:#f2f2f2">&copy; Copyright  BOOKTOPIA 2024. All Rights Reserved.</p> 
+  </footer> 
+</body> 
+</html>

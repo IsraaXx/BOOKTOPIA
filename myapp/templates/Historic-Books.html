@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="{% static 'css/NavBar.css' %}">
+      <script src="{% static  'js/search.js'%}" defer></script>
+      <script src="{% static  'js/Login-profile.js'%}"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <title>Historic Books</title>
+      <link rel="stylesheet" href="{% static 'css/Historic-Books.css'%}">
+      
+  </head>
+  <body>
+{% if user_type == 'user' %}
+    {% include 'user_navbar.html' %}
+{% elif user_type == 'admin' %}
+    {% include 'admin_navbar.html' %}
+{% endif %}
+
+
+      <div class="intro">
+        <h2 id = "c">Historic Books category:</h2>
+        <p id="para1">History books make up an important genre in non-fiction. They help us understand the past so we can build a better future. From the American Civil War and two World Wars, to the Cold War and the Vietnam War, there is a vast selection of titles about the conflicts that have shaped our world. </p>
+        <p id="para2">History books also provide a deep insight into key historical figures, from Genghis Khan to Ulysses Grant and Winston Churchill. World history is vast, and these 30 books are the tip of the iceberg. Our list of the best history books includes bestsellers, Pulitzer Prize winners and editor's picks from distinguished historians and biographers.            </p>
+    
+      </div>
+
+      <div class="container">
+        {% for book in historic_books %}
+        <div class="card" id="{{ book.id }}">
+            <a href="{% url 'book_detail' book.id %}" target="_self">
+                <img class="imgbook" src="{{ book.image_url.url }}" alt="{{ book.title }}">
+            </a>
+            <div class="details">
+                <h1>{{ book.title }}</h1>
+                <p>By {{ book.author }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+      <footer class="footer">
+        <div class="social-container">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+          <a href="https://www.twitter.com" target="_blank" class="fa fa-twitter"></a>
+          <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+          <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
+        </div>
+        <p style="color:#f2f2f2">&copy; Copyright  BOOKTOPIA 2024. All Rights Reserved.</p> 
+      </footer>
+
+    </body>
+</html>
