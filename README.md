@@ -1,5 +1,5 @@
 <h1 style="display: flex; align-items: center;">
-    <img src="myapp/static/image/Logo.jpg" alt="BOOKTOPIA Logo" height="150px" style="margin-right: 10px;"> BOOKTOPIA - <h2>Your Gateway to Endless Stories!</h2>
+    <img src="myapp/static/image/Logo.jpg" alt="BOOKTOPIA Logo" height="150px" style="margin-right: 10px;">BOOKTOPIA-Your Gateway to Endless Stories!
 </h1>
 
 ## Technologies Used
