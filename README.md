@@ -4,7 +4,7 @@
 
 ## Technologies Used
 - **Front-end:** HTML, CSS, JavaScript
-- **Back-end:** Django Framework
+- **Back-end:** Django Framework 
 
 ## Features
 - **User and Admin Accounts:** Login as either an admin or a user, each with their own unique set of features. Common features are available to both roles.
